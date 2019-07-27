@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">KenobiScanner</string>
+    <string name="app_title">Kenobi Scanner</string>
+    <string name="scan_button_text">Scan</string>
 </resources>

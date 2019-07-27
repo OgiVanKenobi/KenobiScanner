@@ -8,4 +8,10 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="defaultButtonStyle" parent="AppTheme">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/PrimaryText</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
 </resources>

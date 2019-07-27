@@ -5,15 +5,29 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
         tools:context=".MainActivity">
 
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hello World!"
+            android:text="@string/app_title"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="32sp"
+            android:layout_marginTop="@dimen/huge_margin"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    <Button
+            android:text="@string/scan_button_text"
+            android:layout_width="@dimen/big_button_width"
+            android:layout_height="@dimen/big_button_height"
+            android:id="@+id/scan_button"
+            style="@style/defaultButtonStyle"
+            android:layout_marginTop="@dimen/standard_margin"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
