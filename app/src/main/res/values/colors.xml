@@ -3,7 +3,7 @@
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
     <color name="color1">#373b38</color>
-    <color name="color2">#50c2d4</color>
+    <color name="color2">#0f70ff</color>
 
     //System colors
     <color name="colorPrimary">@color/black</color>

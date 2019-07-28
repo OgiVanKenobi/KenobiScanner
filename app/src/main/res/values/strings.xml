@@ -5,4 +5,12 @@
     <string name="permission_denied_error_text">Scanning is not possible without permission. Please grant permission to continue.</string>
     <string name="change_permission_button_text">Change permission</string>
     <string name="dismiss_button_text">Dismiss</string>
+    <string name="copy_button_text">Copy to clipboard</string>
+    <string name="open_link_button_text">Visit link</string>
+    <string name="share_button_text">Share</string>
+    <string name="copy_to_clipoboard_sucess_toast_text">Scanned content copied to clipboard.</string>
+    <string name="scan_again_button_text">Scan again</string>
+    <string name="link_substring">www.</string>
+    <string name="no_link_toast_text">Scanned data doesn\'t contain website url</string>
+    <string name="http">http</string>
 </resources>
