@@ -1,12 +1,13 @@
 package com.example.kenobiscanner
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.SparseArray
 import android.view.SurfaceHolder
-import androidx.appcompat.app.AppCompatActivity
 import com.example.kenobiscanner.utils.GLRenderer
 import com.example.kenobiscanner.utils.PermissionUtils
+import com.google.android.gms.common.api.CommonStatusCodes
 import com.google.android.gms.vision.CameraSource
 import com.google.android.gms.vision.Detector
 import com.google.android.gms.vision.barcode.Barcode
@@ -16,7 +17,7 @@ import kotlinx.android.synthetic.main.activity_scan.*
 /**
  * Scan Activity where all the scanning work is done
  */
-class ScanActivity : AppCompatActivity() {
+class ScanActivity : Activity() {
 
     companion object {
         const val SCAN_RESULTS_KEY = "scanResults"
@@ -27,19 +28,27 @@ class ScanActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_scan)
-        //Without setting the renderer app crashes
-        camera_view.setRenderer(GLRenderer())
+        initViews()
         createCameraSource()
     }
 
-    private fun createCameraSource() {
-        barcodeDetector = BarcodeDetector.Builder(this).build()
+    private fun initViews() {
+        //Without setting the renderer app crashes
+        camera_view.setRenderer(GLRenderer())
+
+        barcodeDetector = BarcodeDetector.Builder(this)
+            .setBarcodeFormats(Barcode.ALL_FORMATS)
+            .build()
+
         cameraSource = CameraSource.Builder(this, barcodeDetector)
             .setAutoFocusEnabled(true)
             .setRequestedPreviewSize(1600, 1024)
+            .setRequestedFps(25f)
             .build()
+    }
 
-        camera_view.holder.addCallback(object : SurfaceHolder.Callback {
+    private fun createCameraSource() {
+         camera_view.holder.addCallback(object : SurfaceHolder.Callback {
             override fun surfaceCreated(p0: SurfaceHolder?) {
                 if (PermissionUtils.checkCameraPermission(this@ScanActivity)) {
                     cameraSource.start(camera_view.holder)
@@ -60,12 +69,19 @@ class ScanActivity : AppCompatActivity() {
             override fun receiveDetections(detections: Detector.Detections<Barcode>?) {
                 val scannedCodes: SparseArray<Barcode> = detections?.detectedItems as SparseArray<Barcode>
                 if (scannedCodes.size() > 0) {
-                    val resultActivityIntent = Intent(this@ScanActivity, ResultActivity::class.java)
-                    resultActivityIntent.putExtra(SCAN_RESULTS_KEY, scannedCodes.valueAt(0).displayValue)
-                    startActivity(resultActivityIntent)
+                    barcodeDetector.release()
+                    openResultActivity(scannedCodes)
                 }
             }
         })
+    }
+
+    private fun openResultActivity(scannedCodes: SparseArray<Barcode>) {
+        val resultActivityIntent = Intent(this@ScanActivity, ResultActivity::class.java)
+        resultActivityIntent.putExtra(SCAN_RESULTS_KEY, scannedCodes.valueAt(0).displayValue)
+        setResult(CommonStatusCodes.SUCCESS, resultActivityIntent)
+        startActivity(resultActivityIntent)
+        finish()
     }
 
     override fun onDestroy() {

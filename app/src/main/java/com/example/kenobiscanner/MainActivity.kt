@@ -1,12 +1,12 @@
 package com.example.kenobiscanner
 
 import android.Manifest.permission.CAMERA
+import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import com.example.kenobiscanner.utils.PermissionUtils
 import kotlinx.android.synthetic.main.activity_main.*
@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 /**
  * Main Activity that is started when app starts
  */
-class MainActivity : AppCompatActivity() {
+class MainActivity : Activity() {
 
     companion object {
         const val SCAN_REQUEST_CODE: Int = 1
