@@ -12,4 +12,8 @@
     <dimen name="small_button_width">92dp</dimen>
     <dimen name="result_textview_max_height">200dp</dimen>
     <dimen name="result_text_size">24sp</dimen>
+    <dimen name="result_textview_top_margin">100dp</dimen>
+    <dimen name="standard_text_size">16sp</dimen>
+    <dimen name="small_margin">8dp</dimen>
+    <dimen name="data_type_icon_size">24dp</dimen>
 </resources>

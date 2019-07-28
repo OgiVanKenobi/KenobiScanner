@@ -13,4 +13,7 @@
     <string name="link_substring">www.</string>
     <string name="no_link_toast_text">Scanned data doesn\'t contain website url</string>
     <string name="http">http</string>
+    <string name="dial_number_button_text">Dial this number</string>
+    <string name="send_email_button_text">Send email</string>
+    <string name="search_web_button_text">Search web</string>
 </resources>
