@@ -8,7 +8,7 @@ class ResultActivity: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val scannedCode = intent?.extras?.get("scanResults")
+        val scannedCode = intent?.extras?.get(ScanActivity.SCAN_RESULTS_KEY)
         Toast.makeText(this, scannedCode.toString(), Toast.LENGTH_LONG).show()
     }
 }

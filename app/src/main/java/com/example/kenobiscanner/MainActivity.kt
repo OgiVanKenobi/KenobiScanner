@@ -34,7 +34,6 @@ class MainActivity : AppCompatActivity() {
                 requestCameraPermission()
             }
         }
-
     }
 
     private fun askForCameraPermission() {
@@ -49,15 +48,15 @@ class MainActivity : AppCompatActivity() {
         AlertDialog.Builder(this@MainActivity)
             .setMessage(R.string.permission_denied_error_text)
             .setCancelable(false)
-            .setPositiveButton("Change permission") { _, _ -> requestCameraPermission()}
-            .setNegativeButton("Dismiss", null)
+            .setPositiveButton(getString(R.string.change_permission_button_text)) { _, _ -> requestCameraPermission() }
+            .setNegativeButton(getString(R.string.dismiss_button_text), null)
             .create()
             .show()
     }
 
-private fun requestCameraPermission() {
-    ActivityCompat.requestPermissions(this, arrayOf(CAMERA), SCAN_REQUEST_CODE)
-}
+    private fun requestCameraPermission() {
+        ActivityCompat.requestPermissions(this, arrayOf(CAMERA), SCAN_REQUEST_CODE)
+    }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
@@ -70,8 +69,8 @@ private fun requestCameraPermission() {
         }
     }
 
-private fun startScanActivity() {
-    val scanActivityIntent = Intent(this, ScanActivity::class.java)
-    startActivity(scanActivityIntent)
-}
+    private fun startScanActivity() {
+        val scanActivityIntent = Intent(this, ScanActivity::class.java)
+        startActivity(scanActivityIntent)
+    }
 }

@@ -16,10 +16,13 @@ import kotlinx.android.synthetic.main.activity_scan.*
 /**
  * Scan Activity where all the scanning work is done
  */
-class ScanActivity: AppCompatActivity() {
+class ScanActivity : AppCompatActivity() {
 
+    companion object {
+        const val SCAN_RESULTS_KEY = "scanResults"
+    }
     private lateinit var barcodeDetector: BarcodeDetector
-    private lateinit var cameraSource : CameraSource
+    private lateinit var cameraSource: CameraSource
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,15 +55,13 @@ class ScanActivity: AppCompatActivity() {
         })
 
         barcodeDetector.setProcessor(object : Detector.Processor<Barcode> {
-            override fun release() {
-
-            }
+            override fun release() { }
 
             override fun receiveDetections(detections: Detector.Detections<Barcode>?) {
-                var scannedCodes: SparseArray<Barcode> = detections?.detectedItems as SparseArray<Barcode>
+                val scannedCodes: SparseArray<Barcode> = detections?.detectedItems as SparseArray<Barcode>
                 if (scannedCodes.size() > 0) {
                     val resultActivityIntent = Intent(this@ScanActivity, ResultActivity::class.java)
-                    resultActivityIntent.putExtra("scanResults", scannedCodes.valueAt(0).displayValue)
+                    resultActivityIntent.putExtra(SCAN_RESULTS_KEY, scannedCodes.valueAt(0).displayValue)
                     startActivity(resultActivityIntent)
                 }
             }
