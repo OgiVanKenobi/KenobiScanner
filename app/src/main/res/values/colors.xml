@@ -6,7 +6,7 @@
     <color name="color2">#50c2d4</color>
 
     //System colors
-    <color name="colorPrimary">@color/color1</color>
+    <color name="colorPrimary">@color/black</color>
     <color name="colorPrimaryDark">@color/black</color>
     <color name="colorAccent">@color/color2</color>
 

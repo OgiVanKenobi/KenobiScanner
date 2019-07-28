@@ -1,14 +1,18 @@
 package com.example.kenobiscanner
 
+import android.app.Activity
 import android.os.Bundle
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_result.*
 
-class ResultActivity: AppCompatActivity() {
+/**
+ * Activity in charge of getting the results of the scan and displaying it on screen
+ */
+class ResultActivity: Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_result)
         val scannedCode = intent?.extras?.get(ScanActivity.SCAN_RESULTS_KEY)
-        Toast.makeText(this, scannedCode.toString(), Toast.LENGTH_LONG).show()
+        resultTextView.text = scannedCode.toString()
     }
 }
