@@ -1,19 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto">
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent">
 
     <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="300dp"
-            android:layout_height="100dp"
+            android:layout_width="@dimen/result_text_view_width"
+            android:layout_height="wrap_content"
+            android:maxHeight="@dimen/result_textview_max_height"
             android:id="@+id/resultTextView"
-            android:textSize="24sp"
+            android:textSize="@dimen/result_text_size"
             android:textColor="@color/SecondaryText"
+            android:textColorLink="@color/colorAccent"
+            android:textColorHighlight="@color/SecondaryText"
             android:textAlignment="center"
             android:autoLink="all"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="www.google.com"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/options_tab_height"
+            android:id="@+id/more_options_layout"
+            app:layout_constraintBottom_toTopOf="@+id/scan_again_button">
+
+        <Button
+                android:layout_width="0dp"
+                android:layout_height="@dimen/small_button_height"
+                android:id="@+id/copy_button"
+                style="@style/defaultButtonStyle"
+                android:padding="0dp"
+                tools:layout_editor_absoluteY="6dp"
+                android:text="@string/copy_button_text"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/share_button"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        <Button
+                android:layout_width="0dp"
+                android:layout_height="@dimen/small_button_height"
+                android:id="@+id/open_link_button"
+                style="@style/defaultButtonStyle"
+                android:text="@string/open_link_button_text"
+                android:padding="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:layout_editor_absoluteY="6dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintEnd_toStartOf="@+id/share_button"/>
+
+        <Button
+                android:layout_width="0dp"
+                android:layout_height="@dimen/small_button_height"
+                android:id="@+id/share_button"
+                style="@style/defaultButtonStyle"
+                android:text="@string/share_button_text"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:padding="0dp" tools:layout_editor_absoluteY="6dp"
+                app:layout_constraintStart_toEndOf="@+id/open_link_button"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintEnd_toStartOf="@+id/copy_button"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/small_button_height"
+            android:id="@+id/scan_again_button"
+            style="@style/defaultButtonStyle"
+            android:text="@string/scan_again_button_text"
+            android:layout_margin="@dimen/standard_margin"
+            android:padding="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

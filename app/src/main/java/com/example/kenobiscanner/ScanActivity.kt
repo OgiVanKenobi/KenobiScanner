@@ -79,7 +79,6 @@ class ScanActivity : Activity() {
     private fun openResultActivity(scannedCodes: SparseArray<Barcode>) {
         val resultActivityIntent = Intent(this@ScanActivity, ResultActivity::class.java)
         resultActivityIntent.putExtra(SCAN_RESULTS_KEY, scannedCodes.valueAt(0).displayValue)
-        setResult(CommonStatusCodes.SUCCESS, resultActivityIntent)
         startActivity(resultActivityIntent)
         finish()
     }

@@ -5,4 +5,11 @@
     <dimen name="big_button_width">120dp</dimen>
     <dimen name="big_button_height">60dp</dimen>
     <dimen name="standard_padding">16dp</dimen>
+    <dimen name="options_tab_height">60dp</dimen>
+    <dimen name="result_text_view_width">300dp</dimen>
+    <dimen name="result_text_view_height">100dp</dimen>
+    <dimen name="small_button_height">60dp</dimen>
+    <dimen name="small_button_width">92dp</dimen>
+    <dimen name="result_textview_max_height">200dp</dimen>
+    <dimen name="result_text_size">24sp</dimen>
 </resources>
