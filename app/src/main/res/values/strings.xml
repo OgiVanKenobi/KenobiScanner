@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">KenobiScanner</string>
+    <string name="app_title">Kenobi Scanner</string>
+    <string name="scan_button_text">Scan</string>
+    <string name="permission_denied_error_text">Scanning is not possible without permission. Please grant permission to continue.</string>
+    <string name="change_permission_button_text">Change permission</string>
+    <string name="dismiss_button_text">Dismiss</string>
 </resources>
