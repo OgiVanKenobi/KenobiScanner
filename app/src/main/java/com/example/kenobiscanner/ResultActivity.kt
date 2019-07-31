@@ -74,7 +74,7 @@ class ResultActivity : Activity() {
 
     private fun dialNumber(phoneNumber: String) {
         val intent = Intent(Intent.ACTION_DIAL).apply {
-            data = Uri.parse(phoneNumber)
+            data = Uri.parse("tel:$phoneNumber")
         }
         if (intent.resolveActivity(packageManager) != null) {
             startActivity(intent)

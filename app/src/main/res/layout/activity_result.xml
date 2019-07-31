@@ -31,7 +31,7 @@
             android:id="@+id/resultTextView"
             android:textSize="@dimen/result_text_size"
             android:textColor="@color/SecondaryText"
-            android:textColorLink="@color/colorAccent"
+            android:textColorLink="@color/SecondaryText"
             android:textColorHighlight="@color/SecondaryText"
             android:textAlignment="center"
             android:ellipsize="end"
