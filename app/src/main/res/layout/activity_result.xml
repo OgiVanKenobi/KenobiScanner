@@ -2,7 +2,27 @@
 <androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent">
+        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <ImageView
+            android:layout_width="@dimen/data_type_icon_size"
+            android:layout_height="@dimen/data_type_icon_size"
+            android:id="@+id/data_type_icon"
+            android:layout_marginStart="@dimen/standard_margin"
+            app:layout_constraintBottom_toTopOf="@+id/resultTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:srcCompat="@drawable/data_type_url" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/data_type_text_view"
+            android:textSize="@dimen/standard_text_size"
+            android:layout_marginStart="@dimen/small_margin"
+            app:layout_constraintBottom_toTopOf="@+id/resultTextView"
+            app:layout_constraintStart_toEndOf="@+id/data_type_icon"
+            tools:text="Website" />
 
     <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="@dimen/result_text_view_width"
@@ -11,12 +31,13 @@
             android:id="@+id/resultTextView"
             android:textSize="@dimen/result_text_size"
             android:textColor="@color/SecondaryText"
-            android:textColorLink="@color/colorAccent"
+            android:textColorLink="@color/SecondaryText"
             android:textColorHighlight="@color/SecondaryText"
             android:textAlignment="center"
+            android:ellipsize="end"
             android:autoLink="all"
+            android:layout_marginTop="@dimen/result_textview_top_margin"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             tools:text="www.google.com"/>
@@ -44,7 +65,7 @@
         <Button
                 android:layout_width="0dp"
                 android:layout_height="@dimen/small_button_height"
-                android:id="@+id/open_link_button"
+                android:id="@+id/action_button"
                 style="@style/defaultButtonStyle"
                 android:text="@string/open_link_button_text"
                 android:padding="0dp"
@@ -64,7 +85,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:padding="0dp" tools:layout_editor_absoluteY="6dp"
-                app:layout_constraintStart_toEndOf="@+id/open_link_button"
+                app:layout_constraintStart_toEndOf="@+id/action_button"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintEnd_toStartOf="@+id/copy_button"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
