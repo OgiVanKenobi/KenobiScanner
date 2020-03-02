@@ -1,16 +1,16 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="defaultButtonStyle" parent="AppTheme">
+    <style name="defaultButtonStyle" parent="@style/Widget.AppCompat.Button">
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/PrimaryText</item>
+        <item name="android:textColor">@color/SecondaryText</item>
         <item name="android:textAllCaps">true</item>
     </style>
 
