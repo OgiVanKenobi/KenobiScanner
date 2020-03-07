@@ -1,9 +1,12 @@
 package com.example.kenobiscanner
 
 import android.Manifest.permission.CAMERA
+import android.app.ActionBar
 import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.drm.DrmStore
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
@@ -24,6 +27,7 @@ class MainActivity : Activity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         scan_button.setOnClickListener { openScanActivity() }
+        privacyPolicyButton.setOnClickListener { openPrivacyPolicy() }
     }
 
     private fun openScanActivity() {
@@ -34,6 +38,12 @@ class MainActivity : Activity() {
                 requestCameraPermission()
             }
         }
+    }
+
+    private fun openPrivacyPolicy() {
+        val openBrowserIntent = Intent(Intent.ACTION_VIEW)
+        openBrowserIntent.data = Uri.parse(getString(R.string.privacy_policy_web_url))
+        startActivity(openBrowserIntent)
     }
 
     private fun askForCameraPermission() {
