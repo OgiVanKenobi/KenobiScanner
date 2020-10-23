@@ -54,5 +54,19 @@
             android:layout_marginTop="@dimen/huge_margin"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintBottom_toTopOf="@+id/version" />
+
+    <TextView
+            android:id="@+id/version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/standard_margin"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="@dimen/version_label_text_size"
+            android:layout_marginTop="@dimen/standard_margin"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="v1.0.0"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

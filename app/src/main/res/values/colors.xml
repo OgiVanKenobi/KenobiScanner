@@ -13,4 +13,6 @@
     //Custom colors
     <color name="PrimaryText">@color/black</color>
     <color name="SecondaryText">@color/white</color>
+    <color name="bar_code_scanner_background_color">#44000000</color>
+    <color name="bar_code_scanner_line_color">#962041</color>
 </resources>

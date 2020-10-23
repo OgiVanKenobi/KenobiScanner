@@ -19,4 +19,5 @@
     <dimen name="app_title_text_size">32sp</dimen>
     <dimen name="home_screen_logo_size">100dp</dimen>
     <dimen name="logo_margin_top">32dp</dimen>
+    <dimen name="version_label_text_size">12sp</dimen>
 </resources>

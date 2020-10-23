@@ -7,7 +7,6 @@ import android.util.SparseArray
 import android.view.SurfaceHolder
 import com.example.kenobiscanner.utils.GLRenderer
 import com.example.kenobiscanner.utils.PermissionUtils
-import com.google.android.gms.common.api.CommonStatusCodes
 import com.google.android.gms.vision.CameraSource
 import com.google.android.gms.vision.Detector
 import com.google.android.gms.vision.barcode.Barcode
@@ -21,6 +20,9 @@ class ScanActivity : Activity() {
 
     companion object {
         const val SCAN_RESULTS_KEY = "scanResults"
+        const val CAMERA_PREVIEW_WIDTH = 1600
+        const val CAMERA_PREVIEW_HEIGHT = 1024
+        const val CAMERA_PREVIEW_FPS = 25f
     }
     private lateinit var barcodeDetector: BarcodeDetector
     private lateinit var cameraSource: CameraSource
@@ -42,8 +44,8 @@ class ScanActivity : Activity() {
 
         cameraSource = CameraSource.Builder(this, barcodeDetector)
             .setAutoFocusEnabled(true)
-            .setRequestedPreviewSize(1600, 1024)
-            .setRequestedFps(25f)
+            .setRequestedPreviewSize(CAMERA_PREVIEW_WIDTH, CAMERA_PREVIEW_HEIGHT)
+            .setRequestedFps(CAMERA_PREVIEW_FPS)
             .build()
     }
 

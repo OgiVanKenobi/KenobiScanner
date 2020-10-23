@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent" >
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <android.opengl.GLSurfaceView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/camera_view" />
-</LinearLayout>
+
+    <info.androidhive.barcode.ScannerOverlay
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bar_code_scanner_background_color"
+            app:line_color="@color/bar_code_scanner_line_color"
+            app:line_speed="@integer/bar_code_scanner_line_speed"
+            app:line_width="@integer/bar_code_scanner_line_width"
+            app:square_height="@integer/bar_code_scanner_overlay_size"
+            app:square_width="@integer/bar_code_scanner_overlay_size"/>
+</RelativeLayout>
