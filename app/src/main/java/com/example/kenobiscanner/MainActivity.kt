@@ -24,7 +24,7 @@ class MainActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        version.text = "Version : " + BuildConfig.VERSION_NAME
+        version.text = getString(R.string.label_version, BuildConfig.VERSION_NAME)
         scan_button.setOnClickListener { openScanActivity() }
         privacyPolicyButton.setOnClickListener { openPrivacyPolicy() }
     }
