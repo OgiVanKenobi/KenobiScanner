@@ -1,11 +1,9 @@
 package com.example.kenobiscanner
 
 import android.Manifest.permission.CAMERA
-import android.app.ActionBar
 import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.drm.DrmStore
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -26,6 +24,7 @@ class MainActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        version.text = getString(R.string.label_version, BuildConfig.VERSION_NAME)
         scan_button.setOnClickListener { openScanActivity() }
         privacyPolicyButton.setOnClickListener { openPrivacyPolicy() }
     }

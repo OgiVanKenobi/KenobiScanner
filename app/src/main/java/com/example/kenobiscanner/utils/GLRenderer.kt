@@ -16,5 +16,4 @@ class GLRenderer : GLSurfaceView.Renderer {
     override fun onSurfaceCreated(p0: GL10?, p1: EGLConfig?) {
         p0?.glClear(GL10.GL_COLOR_BUFFER_BIT or GL10.GL_DEPTH_BUFFER_BIT)
     }
-
 }

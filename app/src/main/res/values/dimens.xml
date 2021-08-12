@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="small_margin">8dp</dimen>
     <dimen name="standard_margin">16dp</dimen>
+    <dimen name="logo_margin_top">32dp</dimen>
     <dimen name="huge_margin">64dp</dimen>
+    <dimen name="result_textview_top_margin">100dp</dimen>
+
     <dimen name="big_button_width">120dp</dimen>
     <dimen name="big_button_height">60dp</dimen>
     <dimen name="standard_padding">16dp</dimen>
@@ -12,11 +16,11 @@
     <dimen name="small_button_width">92dp</dimen>
     <dimen name="result_textview_max_height">200dp</dimen>
     <dimen name="result_text_size">24sp</dimen>
-    <dimen name="result_textview_top_margin">100dp</dimen>
     <dimen name="standard_text_size">16sp</dimen>
-    <dimen name="small_margin">8dp</dimen>
     <dimen name="data_type_icon_size">24dp</dimen>
     <dimen name="app_title_text_size">32sp</dimen>
     <dimen name="home_screen_logo_size">100dp</dimen>
-    <dimen name="logo_margin_top">32dp</dimen>
+    <dimen name="version_label_text_size">12sp</dimen>
+    <dimen name="camera_icon_dimen">50dp</dimen>
+    <dimen name="default_z_translation">10dp</dimen>
 </resources>
