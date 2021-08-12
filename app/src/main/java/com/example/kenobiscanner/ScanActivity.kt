@@ -58,13 +58,13 @@ class ScanActivity : Activity(), ActivityCompat.OnRequestPermissionsResultCallba
             .build()
 
         cameraView.holder.addCallback(object : SurfaceHolder.Callback {
-            override fun surfaceCreated(p0: SurfaceHolder?) {
+            override fun surfaceCreated(p0: SurfaceHolder) {
                 startCamera()
             }
 
-            override fun surfaceChanged(p0: SurfaceHolder?, p1: Int, p2: Int, p3: Int) {}
+            override fun surfaceChanged(p0: SurfaceHolder, p1: Int, p2: Int, p3: Int) { }
 
-            override fun surfaceDestroyed(p0: SurfaceHolder?) {
+            override fun surfaceDestroyed(p0: SurfaceHolder) {
                 cameraSource.stop()
             }
         })
@@ -127,7 +127,7 @@ class ScanActivity : Activity(), ActivityCompat.OnRequestPermissionsResultCallba
         const val CAMERA_PREVIEW_WIDTH = 1600
         const val CAMERA_PREVIEW_HEIGHT = 1024
         const val CAMERA_PREVIEW_FPS = 25f
-        const val CAMERA_FACING_BACK = 0
-        const val CAMERA_FACING_FRONT = 1
+        const val CAMERA_FACING_BACK = CameraSource.CAMERA_FACING_BACK
+        const val CAMERA_FACING_FRONT = CameraSource.CAMERA_FACING_FRONT
     }
 }
